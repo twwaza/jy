@@ -84,9 +84,9 @@
       <div class="appdetail">
         <span>Version:</span> 1.0.7 / <span>Size:</span> 6.45 MB
       </div>
- <a href="https://firebasestorage.googleapis.com/v0/b/fnet-vpn-connect.appspot.com/o/FNET%20VPN%20V_1.0.7-beta.apk?alt=media&token=2ed349e1-363b-447a-82a9-453a7f473440" id="sessionStorageCounter"><i class="fa fa-arrow-down"></i> Download APK</a>
+ <a href="https://firebasestorage.googleapis.com/v0/b/fnet-vpn-connect.appspot.com/o/FNET%20VPN%20V_1.0.7-beta.apk?alt=media&token=2ed349e1-363b-447a-82a9-453a7f473440" id="clickCounter"><i class="fa fa-arrow-down"></i> Download APK</a>
   
- <p class="outputText">Download : <span id="sessionStorageCount">0</span></p>
+ <p class="outputText">Download : <span id="clickCount">0</span></p>
     </div>
 </div>
 
@@ -125,7 +125,7 @@
 function ccInit(){
     if(typeof(Storage) !== "undefined"){
         if(!localStorage.clickCount){
-            localStorage.clickCount = 0;
+            localStorage.clickCount = 50;
         }
         if(!sessionStorage.sessionCount){
             sessionStorage.sessionCount = 41;
