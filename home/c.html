@@ -20,7 +20,7 @@
 
 <body>
     
-<nav class="navbar fixed-top bg-??" style="background-color: #6750A4;" data-bs-theme="dark">
+<nav class="navbar fixed-top bg-?? placeholder-wave" style="background-color: #6750A4;" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">FNET VPN TH</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,150 +84,10 @@
       <div class="appdetail">
         <span>Version:</span> 1.0.7 / <span>Size:</span> 6.45 MB
       </div>
- <a href="https://firebasestorage.googleapis.com/v0/b/fnet-vpn-connect.appspot.com/o/FNET%20VPN%20V_1.0.7-beta.apk?alt=media&token=2ed349e1-363b-447a-82a9-453a7f473440" id="clickCounter"><i class="fa fa-arrow-down"></i> Download APK</a>
-  
- <p class="outputText">Download : <span id="clickCount">0</span></p>
+  <a href="https://dl-link.site/api/file/FNET%20VPN%20V_1.0.7-beta.apk"><i class="fa fa-arrow-down"></i> Download APK</a>
+ 
     </div>
 </div>
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
-
-
-<script>
-    $(document).ready(function(){
-    // Initialize Local/Session Storage
-    ccInit();
-    // Local Storage Counter
-   $("#clickCounter").click(function(){
-      clickCounter("local"); 
-   }); 
-  // Local Storage Reset
-  $("#resetCounter").click(function(){
-      resetCounter("local"); 
-   }); 
-  // Session Storage Counter
-   $("#sessionStorageCounter").click(function(){
-      clickCounter("session"); 
-   }); 
-   // Session Storage Reset
-   $("#resetSessionCounter").click(function(){
-      resetCounter("session"); 
-   }); 
-  // GOELOCATION
-  geoLocationInit();
-   $("#getGeoLocation").click(function(){
-        GetGeoLocation();
-   })
-});
-
-function ccInit(){
-    if(typeof(Storage) !== "undefined"){
-        if(!localStorage.clickCount){
-            localStorage.clickCount = 50;
-        }
-        if(!sessionStorage.sessionCount){
-            sessionStorage.sessionCount = 41;
-        }
-        $("#clickCount").html(localStorage.clickCount);
-        $("#sessionStorageCount").html(sessionStorage.sessionCount)
-    }else{
-        $("p#outputText").html("Your browser doesn't support Local Storage");
-    }
-}
-// CLICK COUNTER
-function clickCounter(storageType){
-    
-    if(typeof(Storage) !== "undefined"){
-        if(storageType == "local"){
-            if(localStorage.clickCount){
-                localStorage.clickCount = parseInt(localStorage.clickCount) + 1;
-            }
-            else{
-                localStorage.clickCount = 1;
-            }
-            $("#clickCount").html(localStorage.clickCount);
-        }
-        else if(storageType == "session"){
-            if(sessionStorage.sessionCount){
-                sessionStorage.sessionCount = parseInt(sessionStorage.sessionCount) + 1;
-            }
-            else{
-                sessionStorage.sessionCount = 1;
-            }
-            $("#sessionStorageCount").html(sessionStorage.sessionCount)
-        }
-        
-    }else{
-        $("p.outputText").html("Your browser doesn't support Local Storage");
-    }
-}
-
-function resetCounter(storageType){
-    if(typeof(Storage) !== "undefined"){
-        if(storageType == "local"){
-            localStorage.clear();
-            $("#clickCount").html("0");
-        }
-        else if(storageType == "session"){
-            sessionStorage.clear();
-            $("#sessionStorageCount").html("0")
-        }
-        
-    }else{
-        $("p.outputText").html("Your browser doesn't support Local/Session Storage");
-    }
-}
-
-// GEOLOCATION
-var nav = navigator.geolocation;
-var message = "Geo Location enabled.";
-
-function geoLocationInit(){
-    if(nav){
-        //$("#geoLoc").html(message);
-      GetGeoLocation();
-    }
-    else{
-        $("#geoLoc").html("Your browser doesn't support Geo Location")
-    }
-}
-
-function GetGeoLocation(){
-    nav.getCurrentPosition(success, failure);
-    $("#geoLoc").html(message)
-    
-    
-}
-
-function success(position){
-    var lat = position.coords.latitude;
-    var long = position.coords.longitude;
-    message = "Lattitude: " + lat + "<br />Longitude: " + long;
-
-    // GOOGLE API Ready coordinate string
-    var coords = new google.maps.LatLng(lat, long);
-
-    // Setting up map
-    var mapOptions = {
-        zoom: 16,
-        center: coords,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-
-    // Create map
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-    var marker = new google.maps.Marker({
-        position: coords,
-        map: map
-    });
-}
-
-function failure(){
-    message = "Error"
-}
-</script>
 
 <style>
     .navbar {
@@ -377,6 +237,7 @@ p.ex {
     <i class="material-icons nav__icon">image</i>
     <span class="nav__text">Image</span>
   </a>
+  
    <a href="#" class="nav__link nav__link--active">
     <i class="material-icons nav__icon">android</i>
     <span class="nav__text">Install Apk</span>
